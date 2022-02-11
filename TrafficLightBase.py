@@ -1,3 +1,4 @@
+#once we know how many cars are on the bridge and their timings this can limit the number of cars on one side calling the cross function
 #reference https://stackoverflow.com/questions/24834158/deadlock-in-python-single-lane-bridge-implementation
 class OneLaneBridge(object):
     from threading import Semaphore
