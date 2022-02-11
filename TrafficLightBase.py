@@ -14,7 +14,7 @@ def __init__(self):
 
 def cross(self,direction):
     """wait for permission to cross the bridge.  direction should be either
-    north (0) or south (1)."""
+    left (0) or right (1)."""
 
     self.mutex.acquire()
     if(self.dir == -1):
