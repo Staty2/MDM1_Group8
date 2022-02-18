@@ -5,12 +5,6 @@ Created on Thu Feb 17 14:47:20 2022
 
 @author: felix
 """
-
-# x= number on left
-# y= cars on right
-# t= time for 3 cars to cross
-# t= time for 6 cars to cross
-
 def timetocrossconstant(meters,speed,cars):
     meters = float(meters)
     speed = float(speed/2.237)
@@ -19,13 +13,14 @@ def timetocrossconstant(meters,speed,cars):
 
 def timetocrossacceleration(meters, cars):
     meters = float(meters)
-    return 3*cars + (((2*meters)+10.8)/2.591)*(1/2) - 1.5
+    acceleration = 2*meters + 10.8
+    return 3*cars + (acceleration/2.591)**(1/2) - 1.5
+
  
 def conjestion(x,y,car):
     x = float(x)
     y = float(y)
-    car = float(car)
-    rounds = 1
+    rounds = 2
     leftiterationsneeded = float(x/car)
     rightiterationsneeded = float(y/car)
     totaltime = []
@@ -49,7 +44,7 @@ def conjestion(x,y,car):
             totaltime.append(time4)
             totaltime.append(time5)
             totaltime.append(time6)
-            return totaltime
+            print(round(sum(totaltime)/((x+y)*6),rounds))
         if rightiterationsneeded > 1:
             time1= round(3*timetocrossconstant(5, 10, car) + timetocrossconstant(5, 10, (y-car)),rounds)
             print('at 10mph on 5m bridge:', time1)
@@ -69,7 +64,7 @@ def conjestion(x,y,car):
             totaltime.append(time4)
             totaltime.append(time5)
             totaltime.append(time6)
-            return totaltime
+            print(round(sum(totaltime)/((x+y)*6),rounds))
     elif leftiterationsneeded > 1:
         if rightiterationsneeded < 1:
             time1= round(2*timetocrossconstant(5, 10, car) + timetocrossconstant(5, 10, (x-car)),rounds)
@@ -90,7 +85,7 @@ def conjestion(x,y,car):
             totaltime.append(time4)
             totaltime.append(time5)
             totaltime.append(time6)
-            return totaltime
+            print(round(sum(totaltime)/((x+y)*6),rounds))
         if rightiterationsneeded > 1:
             time1= round(2*timetocrossconstant(5, 10, car) + timetocrossconstant(5, 10, (x-car)) + timetocrossconstant(5, 10, (y-car)),rounds)
             print('at 10mph on 5m bridge:', time1)
@@ -110,7 +105,7 @@ def conjestion(x,y,car):
             totaltime.append(time4)
             totaltime.append(time5)
             totaltime.append(time6)
-            return totaltime
+            print(round(sum(totaltime)/((x+y)*6),rounds))
 
 print('Low conjestion: \n1-1:')            
 conjestion(1,1,3)
