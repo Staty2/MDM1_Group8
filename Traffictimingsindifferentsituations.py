@@ -18,9 +18,9 @@ def timetocrossacceleration(meters, cars):
 
  
 def conjestion(x,y,car):
-    x = float(x)
-    y = float(y)
-    rounds = 2
+    x = float(x) #x = the cars on the left
+    y = float(y) #y = the cars on the right
+    rounds = 3
     leftiterationsneeded = float(x/car)
     rightiterationsneeded = float(y/car)
     totaltime = []
@@ -125,3 +125,5 @@ print('\n5-5:')
 conjestion(5, 5, 6)
 print('\n10-10:')
 conjestion(10, 10, 6)
+print('\n10-10:')
+conjestion(12, 10, 6)
