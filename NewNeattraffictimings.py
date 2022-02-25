@@ -46,7 +46,6 @@ def conjestion(x,y,car):
             for leftcar, rightcar in zip_lists:
                 difference.append(rightcar-leftcar)
             difference = [round(i,rounds) for i in difference]
-            print(difference)
             return round(sum(difference)/6,rounds)
     elif leftiterationsneeded > 1:
         if rightiterationsneeded < 1:
